@@ -9,12 +9,14 @@ const tweets = require("./routes/api/tweets");
 
 const bodyParser = require("body-parser");
 
+const passport = require("passport");
+
 mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
-app.get("/", (req, res) => res.send("Greetings World"));
+app.use(passport.initialize());
 
 app.use("/api/users", users);
 app.use("/api/tweets", tweets);
