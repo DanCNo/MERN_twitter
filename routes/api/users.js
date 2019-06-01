@@ -41,7 +41,7 @@ router.post("/register", (req, res) => {
 
                 jsonwebtoken.sign(
                   payload,
-                  keys.secret0rKey,
+                  keys.secretOrKey,
                   { expiresIn: 3600 },
                   (err, token) => {
                     res.json({
@@ -84,7 +84,7 @@ router.post("/login", (req, res) => {
 
             jsonwebtoken.sign(
               payload,
-              keys.secret0rKey,
+              keys.secretOrKey,
               {expiresIn: 3600},
               (err, token) => {
                 res.json({

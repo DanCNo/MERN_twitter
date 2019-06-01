@@ -9,7 +9,7 @@ const tweets = require("./routes/api/tweets");
 
 const bodyParser = require("body-parser");
 
-const passport = require("passport");
+const passport = require("./config/passport")("passport");
 
 mongoose
   .connect(db, { useNewUrlParser: true })
